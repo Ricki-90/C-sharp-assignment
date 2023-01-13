@@ -54,20 +54,10 @@ namespace ConsoleApp_address_book.Services
             newcontacts.Add(newcontact);
         }
 
-
-
-
-
-
-
-
-
-
         private void OptionTwo()
         {
-            Console.Clear();
-            Console.WriteLine();
-
+            Console.WriteLine("Här är en lista på alla kontakter i adressboken:");
+            
         }
 
         private void OptionThree()
