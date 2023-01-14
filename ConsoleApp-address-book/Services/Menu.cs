@@ -56,14 +56,21 @@ namespace ConsoleApp_address_book.Services
 
         private void OptionTwo()
         {
+            Console.Clear();
             Console.WriteLine("Här är en lista på alla kontakter i adressboken:");
+            foreach (var contact in newcontacts) 
+            {
+                Console.Write(contact.DisplayNameEmail);
+            }
+            Console.ReadKey();
             
         }
 
         private void OptionThree()
         {
             Console.Clear();
-            Console.WriteLine();
+            Console.WriteLine("olle");
+            Console.ReadKey();
 
         }
 

@@ -8,6 +8,7 @@ internal interface IContact
     string FirstName { get; set; }
     string LastName { get; set; }
     string Phone { get; set; }
+    string DisplayNameEmail => $"\n{"Förnamn: " + FirstName} \n{"Efternamn: " + LastName} \n{"E-post: " + Email}\n";
 }
 
 internal class Contact : IContact
