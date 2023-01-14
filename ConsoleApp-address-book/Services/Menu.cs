@@ -6,7 +6,7 @@ namespace ConsoleApp_address_book.Services
     internal class Menu
     {
         private List<IContact> newcontacts = new List<IContact>();
-        private FileService file = new FileService();
+        private readonly FileService file = new FileService();
 
         public string FilePath { get; set; } = null!;
 
@@ -29,13 +29,12 @@ namespace ConsoleApp_address_book.Services
                 case "4": OptionFour(); break;
             }
 
-            file.Save(FilePath, JsonConvert.SerializeObject(new { newcontacts }));
         }
 
         private void OptionOne() 
         { 
             Console.Clear();
-            Console.WriteLine("Skapa en ny kontakt");
+            Console.WriteLine("Skapa en ny kontakt:");
 
             CreateNewContact newcontact = new CreateNewContact();
             Console.Write("Ange förnamn: ");
@@ -52,6 +51,7 @@ namespace ConsoleApp_address_book.Services
             newcontact.City = Console.ReadLine() ?? "";
 
             newcontacts.Add(newcontact);
+            file.Save(FilePath, JsonConvert.SerializeObject(new { newcontacts }));
         }
 
         private void OptionTwo()
@@ -69,7 +69,15 @@ namespace ConsoleApp_address_book.Services
         private void OptionThree()
         {
             Console.Clear();
-            Console.WriteLine("olle");
+            Console.WriteLine("Skriv in för och efternamn på personen du söker: ");
+
+            string userResponse = Console.ReadLine().ToLower();
+
+            if (userResponse == )
+            {
+                Console.Write(contact.DisplayNameEmail)
+            }
+
             Console.ReadKey();
 
         }
@@ -77,9 +85,16 @@ namespace ConsoleApp_address_book.Services
         private void OptionFour()
         {
             Console.Clear();
-            Console.WriteLine();
+            foreach (var contact in newcontacts)
+            {
+                Console.Write(contact.FirstName);
+            }
+            Console.WriteLine("För ta bort en kontaktperson i adressboken ange Förnamn: ");
 
+  
         }
+
+    }
 
     }
 }
