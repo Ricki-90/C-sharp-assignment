@@ -1,5 +1,7 @@
 ﻿using ConsoleApp_address_book.Models;
 using Newtonsoft.Json;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace ConsoleApp_address_book.Services
 {
@@ -38,17 +40,17 @@ namespace ConsoleApp_address_book.Services
 
             CreateNewContact newcontact = new CreateNewContact();
             Console.Write("Ange förnamn: ");
-            newcontact.FirstName = Console.ReadLine() ?? "";
+            newcontact.FirstName = Console.ReadLine().ToLower() ?? "";
             Console.Write("Ange Efternamn: ");
-            newcontact.LastName = Console.ReadLine() ?? "";
+            newcontact.LastName = Console.ReadLine().ToLower() ?? "";
             Console.Write("Ange E-post: ");
-            newcontact.Email = Console.ReadLine() ?? "";
+            newcontact.Email = Console.ReadLine().ToLower() ?? "";
             Console.Write("Ange Telefonnummer: ");
-            newcontact.Phone = Console.ReadLine() ?? "";
+            newcontact.Phone = Console.ReadLine().ToLower() ?? "";
             Console.Write("Ange Adress: ");
-            newcontact.Address = Console.ReadLine() ?? "";
+            newcontact.Address = Console.ReadLine().ToLower() ?? "";
             Console.Write("Ange Stad: ");
-            newcontact.City = Console.ReadLine() ?? "";
+            newcontact.City = Console.ReadLine().ToLower() ?? "";
 
             newcontacts.Add(newcontact);
             file.Save(FilePath, JsonConvert.SerializeObject(new { newcontacts }));
@@ -69,13 +71,15 @@ namespace ConsoleApp_address_book.Services
         private void OptionThree()
         {
             Console.Clear();
-            Console.WriteLine("Skriv in för och efternamn på personen du söker: ");
+            Console.WriteLine("Skriv in förnamn på personen du söker: ");
 
             string userResponse = Console.ReadLine().ToLower();
 
-            if (userResponse == )
+            var contact = new Contact();
+
+            if (userResponse == contact.FirstName)
             {
-                Console.Write(contact.DisplayNameEmail)
+                Console.Write(contact.LastName);
             }
 
             Console.ReadKey();
@@ -85,16 +89,25 @@ namespace ConsoleApp_address_book.Services
         private void OptionFour()
         {
             Console.Clear();
+            Console.WriteLine("Skriv in förnamn på personen du vill ta bort från adressboken: ");
+
+            string _newcontact = Console.ReadLine().ToLower();
+
+            if (_newcontact = contact.FirstName) 
+            {
+                newcontacts.Remove();
+            }
+
+
             foreach (var contact in newcontacts)
             {
-                Console.Write(contact.FirstName);
+                Console.Write(contact.DisplayNameEmail);
             }
-            Console.WriteLine("För ta bort en kontaktperson i adressboken ange Förnamn: ");
 
-  
+            Console.ReadKey();
         }
 
     }
 
-    }
 }
+
