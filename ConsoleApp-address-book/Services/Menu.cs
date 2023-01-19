@@ -86,22 +86,34 @@ namespace ConsoleApp_address_book.Services
 
         }
 
+
+
         private void OptionFour()
         {
-            Console.Clear();
-            Console.WriteLine("Skriv in förnamn på personen du vill ta bort från adressboken: ");
-
-            string _newcontact = Console.ReadLine().ToLower();
-
-            if (_newcontact = contact.FirstName) 
-            {
-                newcontacts.Remove();
-            }
-
+            Console.Clear();       
 
             foreach (var contact in newcontacts)
             {
-                Console.Write(contact.DisplayNameEmail);
+                Console.WriteLine("Skriv in förnamn på kontaktpersonen du vill ta bort från adressboken: ");
+                string userInputFirstName = Console.ReadLine();
+
+                Console.WriteLine("Är du säker på att du vill ta bort kontaktpersonen: Svara med Y om du är säker. Annars svara med N.");
+                string userInputY = Console.ReadLine();
+
+                if (userInputY == "Y")
+                {
+                    if (contact.FirstName.Equals(userInputFirstName))
+                    {
+                        newcontacts.Remove(contact);
+                        Console.WriteLine("Kontaktpersonen är raderad");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Något gick fel. Försök igen");
+                    }
+                }
+
+                break;
             }
 
             Console.ReadKey();
