@@ -71,15 +71,23 @@ namespace ConsoleApp_address_book.Services
         private void OptionThree()
         {
             Console.Clear();
-            Console.WriteLine("Skriv in förnamn på personen du söker: ");
 
-            string userResponse = Console.ReadLine().ToLower();
-
-            var contact = new Contact();
-
-            if (userResponse == contact.FirstName)
+            foreach (var contact in newcontacts)
             {
-                Console.Write(contact.LastName);
+                Console.WriteLine("Skriv in förnamn på kontaktpersonen du vill få alla uppgifter om: ");
+
+                string _userInputFirstName = Console.ReadLine().ToLower();
+
+
+                    if (contact.FirstName.Equals(_userInputFirstName))
+                    {
+                        Console.Write(contact.DisplayAllInfo);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Något gick fel. Försök igen");
+                    }
+                break;
             }
 
             Console.ReadKey();
@@ -95,7 +103,7 @@ namespace ConsoleApp_address_book.Services
             foreach (var contact in newcontacts)
             {
                 Console.WriteLine("Skriv in förnamn på kontaktpersonen du vill ta bort från adressboken: ");
-                string userInputFirstName = Console.ReadLine();
+                string userInputFirstName = Console.ReadLine().ToLower();
 
                 Console.WriteLine("Är du säker på att du vill ta bort kontaktpersonen: Svara med Y om du är säker. Annars svara med N.");
                 string userInputY = Console.ReadLine();
