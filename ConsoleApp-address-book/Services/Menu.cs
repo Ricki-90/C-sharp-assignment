@@ -72,26 +72,19 @@ namespace ConsoleApp_address_book.Services
         {
             Console.Clear();
 
+            Console.WriteLine("Skriv in förnamn på kontaktpersonen du vill få alla uppgifter om: ");
+
+            string _userInputFirstName = Console.ReadLine().ToLower();
+                       
             foreach (var contact in newcontacts)
             {
-                Console.WriteLine("Skriv in förnamn på kontaktpersonen du vill få alla uppgifter om: ");
-
-                string _userInputFirstName = Console.ReadLine().ToLower();
-
-
-                    if (contact.FirstName.Equals(_userInputFirstName))
-                    {
-                        Console.Write(contact.DisplayAllInfo);
-                    }
-                    else
-                    {
-                        Console.WriteLine("Något gick fel. Försök igen");
-                    }
-                break;
+                if (contact.FirstName.Equals(_userInputFirstName))
+                {
+                    Console.Write(contact.DisplayAllInfo);                
+                }
             }
 
             Console.ReadKey();
-
         }
 
 
@@ -113,6 +106,7 @@ namespace ConsoleApp_address_book.Services
                     if (contact.FirstName.Equals(userInputFirstName))
                     {
                         newcontacts.Remove(contact);
+                        file.Save(FilePath, JsonConvert.SerializeObject(contact));
                         Console.WriteLine("Kontaktpersonen är raderad");
                     }
                     else
