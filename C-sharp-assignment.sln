@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp-address-book", "ConsoleApp-address-book\ConsoleApp-address-book.csproj", "{41DAE36F-B339-4565-95F0-096812FA3CF6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApp-address-book", "ConsoleApp-address-book\ConsoleApp-address-book.csproj", "{41DAE36F-B339-4565-95F0-096812FA3CF6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfApp-address-book", "WpfApp-address-book\WpfApp-address-book.csproj", "{A61E628B-E270-4D15-AF29-B59A7682579D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WpfApp-address-book", "WpfApp-address-book\WpfApp-address-book.csproj", "{A61E628B-E270-4D15-AF29-B59A7682579D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApp.Tests", "ConsoleApp.Tests\ConsoleApp.Tests.csproj", "{4669095A-1E0C-4492-B74B-2815C529AED5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{A61E628B-E270-4D15-AF29-B59A7682579D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A61E628B-E270-4D15-AF29-B59A7682579D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A61E628B-E270-4D15-AF29-B59A7682579D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4669095A-1E0C-4492-B74B-2815C529AED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4669095A-1E0C-4492-B74B-2815C529AED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4669095A-1E0C-4492-B74B-2815C529AED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4669095A-1E0C-4492-B74B-2815C529AED5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

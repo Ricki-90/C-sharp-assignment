@@ -91,34 +91,30 @@ namespace ConsoleApp_address_book.Services
 
         private void OptionFour()
         {
-            Console.Clear();       
+            Console.Clear();
 
-            foreach (var contact in newcontacts)
+            Console.WriteLine("Skriv in förnamn på kontaktpersonen du vill ta bort från adressboken: ");
+            string userInputFirstName = Console.ReadLine().ToLower();
+
+            Console.WriteLine("Är du säker på att du vill ta bort kontaktpersonen: Svara med Y om du är säker. Annars svara med N.");
+            string userInputY = Console.ReadLine().ToLower();
+
+            if (userInputY == "y")
             {
-                Console.WriteLine("Skriv in förnamn på kontaktpersonen du vill ta bort från adressboken: ");
-                string userInputFirstName = Console.ReadLine().ToLower();
-
-                Console.WriteLine("Är du säker på att du vill ta bort kontaktpersonen: Svara med Y om du är säker. Annars svara med N.");
-                string userInputY = Console.ReadLine();
-
-                if (userInputY == "Y")
+                foreach (var contact in newcontacts)
                 {
+
                     if (contact.FirstName.Equals(userInputFirstName))
                     {
                         newcontacts.Remove(contact);
-                        file.Save(FilePath, JsonConvert.SerializeObject(contact));
+                        file.Save(FilePath, JsonConvert.SerializeObject(new { newcontacts }));
                         Console.WriteLine("Kontaktpersonen är raderad");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Något gick fel. Försök igen");
-                    }
+                        break;
+                    }      
                 }
 
-                break;
+                Console.ReadKey();
             }
-
-            Console.ReadKey();
         }
 
     }

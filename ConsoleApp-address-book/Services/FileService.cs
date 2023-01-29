@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp_address_book.Services;
+﻿using System.Dynamic;
+
+namespace ConsoleApp_address_book.Services;
 
 internal class FileService
 {
@@ -17,5 +19,4 @@ internal class FileService
         }
         catch { return null!; }
     }
-
 }
