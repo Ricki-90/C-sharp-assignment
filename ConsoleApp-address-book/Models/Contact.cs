@@ -1,6 +1,6 @@
 ﻿namespace ConsoleApp_address_book.Models;
 
-internal interface IContact
+public interface IContact
 {
     string Address { get; set; }
     string City { get; set; }
@@ -13,7 +13,7 @@ internal interface IContact
     string DisplayAllInfo => $"\n{"Förnamn: " + FirstName} \n{"Efternamn: " + LastName} \n{"E-post: " + Email}\n{"Telefonnummer: " + Phone} \n{"Adress: " + Address}{","} {City}\n";
 }
 
-internal class Contact : IContact
+public class Contact : IContact
 {
     public string FirstName { get; set; } = null!;
     public string LastName { get; set; } = null!;

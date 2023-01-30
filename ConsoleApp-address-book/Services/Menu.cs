@@ -5,12 +5,14 @@ using System.Collections.Generic;
 
 namespace ConsoleApp_address_book.Services
 {
-    internal class Menu
+    public class Menu
     {
-        private List<IContact> newcontacts = new List<IContact>();
-        private readonly FileService file = new FileService();
+        public List<IContact> newcontacts = new List<IContact>();
+        public readonly FileService file = new FileService();
+        
 
         public string FilePath { get; set; } = null!;
+
 
 
         public void WelcomeMenu()
@@ -33,7 +35,7 @@ namespace ConsoleApp_address_book.Services
 
         }
 
-        private void OptionOne() 
+        public void OptionOne() 
         { 
             Console.Clear();
             Console.WriteLine("Skapa en ny kontakt:");
@@ -56,7 +58,7 @@ namespace ConsoleApp_address_book.Services
             file.Save(FilePath, JsonConvert.SerializeObject(new { newcontacts }));
         }
 
-        private void OptionTwo()
+        public void OptionTwo()
         {
             Console.Clear();
             Console.WriteLine("Här är en lista på alla kontakter i adressboken:");
@@ -68,7 +70,7 @@ namespace ConsoleApp_address_book.Services
             
         }
 
-        private void OptionThree()
+        public void OptionThree()
         {
             Console.Clear();
 
@@ -89,7 +91,7 @@ namespace ConsoleApp_address_book.Services
 
 
 
-        private void OptionFour()
+        public void OptionFour()
         {
             Console.Clear();
 

@@ -2,7 +2,7 @@
 
 namespace ConsoleApp_address_book.Services;
 
-internal class FileService
+public class FileService
 {
     public void Save(string filePath, string content)
     { 
