@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp_address_book"
         mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
+        <Grid Grid.Column="0" Margin="0 0 30 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="0" Margin="0 0 30 0">
+                <TextBlock Text="Förnamn"/>
+                <TextBlock Name="TB_FirstName" Padding="3" Margin="0 0 0 10" />
+
+                <TextBlock Text="Efternamn"/>
+                <TextBlock Name="TB_LastName" Padding="3" Margin="0 0 0 10" />
+
+                <TextBlock Text="E-postadress"/>
+                <TextBlock Name="TB_Email" Padding="3" Margin="0 0 0 10" />
+
+                <Button x:Name="btn_Add" Click="btn_Add_Click" Grid.Row="1" VerticalAlignment="Bottom" Content="LÄGG TILL" Padding="5"/>
+            </StackPanel>
+
+
+
+
+
+        </Grid>
+ 
     </Grid>
 </Window>

@@ -24,5 +24,10 @@ namespace WpfApp_address_book
         {
             InitializeComponent();
         }
+
+        private void btn_Add_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
