@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:models="clr-namespace:WpfApp_address_book.Models"
         xmlns:local="clr-namespace:WpfApp_address_book"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
@@ -14,6 +15,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
+        <!--Form-->
         <Grid Grid.Column="0" Margin="0 0 30 0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -39,6 +41,20 @@
 
 
         </Grid>
+        
+        <!--List of contacts-->
+
+        <ListView x:Name="lv_Contacts" Grid.Column="1" Margin="30 0 0 0">
+            <ListView.ItemTemplate>
+                <DataTemplate DataType="models:Contact">
+                    <StackPanel Margin="0 5 0 5">
+                        <TextBlock FontWeight="Bold" Text="{Binding DisplayName}"/>
+                        <TextBlock Text="{Binding Email}"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            
+        </ListView>
  
     </Grid>
 </Window>

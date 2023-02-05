@@ -12,6 +12,6 @@ namespace WpfApp_address_book.ViewModels
     public partial class ContactsViewModel : ObservableObject
     {
         [ObservableProperty]
-        private ObservableCollection<IContact> contacts = new ObservableCollection<IContact>();
+        private ObservableCollection<Contact> contacts = new ObservableCollection<Contact>();
     }
 }

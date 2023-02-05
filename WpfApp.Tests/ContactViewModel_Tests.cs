@@ -1,3 +1,5 @@
+using FluentAssertions;
+using System.Collections.ObjectModel;
 using WpfApp_address_book.Models;
 using WpfApp_address_book.ViewModels;
 
@@ -17,10 +19,12 @@ namespace WpfApp.Tests
         public void Should_Add_Contact_To_Contacts()
         {
             //act
-            viewModel.Contacts.Add(new Contact { FirstName= "Rickard", LastName = "Johansson" });
-
+            Contact contact = new Contact { FirstName= "Rickard", LastName = "Johansson" };
+            viewModel.Contacts.Add(contact);
 
             //assert
+            viewModel.Contacts.Should().BeOfType<ObservableCollection<Contact>>();
+            viewModel.Contacts.Should().Contain(contact);
         }
     }
 }
